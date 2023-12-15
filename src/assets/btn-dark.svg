@@ -1,0 +1,8 @@
+<svg width="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M26 19C26 22.866 22.866 26 19 26C15.134 26 12 22.866 12 19C12 15.134 15.134 12 19 12C22.866 12 26 15.134 26 19Z"
+        stroke="currentcolor" stroke-width="4"></path>
+    <path
+        d="M19 6V2M19 36V32M32 19H36M2 19H6M28.1923 28.1924L31.0208 31.0209M6.97912 6.97924L9.80755 9.80767M9.80743 28.1924L6.979 31.0209M31.0206 6.97924L28.1922 9.80767"
+        stroke="currentcolor" stroke-width="4" stroke-linecap="round"></path>
+</svg>
