@@ -1,5 +1,6 @@
 import React from 'react'
 import './Section6.css'
+import '../Global.css'
 import { useState } from 'react'
 import terminology from '../../assets/terminology.jpg'
 import content from '../../assets/content.jpg'
@@ -28,16 +29,16 @@ const Section6 = () => {
     return (
         <>
             <section className="section-6">
-                <div className="divTag container w-container">
-                    <div className="divTag section-title">
+                <div className="divTag container6">
+                    <div className="divTag section-title6">
                         <h2 className='title-2'>Make it infinitely yours</h2>
-                        <div className="divTag tagline ch-30">
+                        <div className="divTag tagline ch-6">
                             Your way of working shouldn't depend on your tools, you can set up Cycle
                             to match your unique needs.
                         </div>
                     </div>
-                    <div className="divTag _2-col-wrapper">
-                        <div className="divTag w-layout-grid custom-wrapper">
+                    <div className="divTag col-wrapper">
+                        <div className="divTag w-layout-grid6 ">
                             <div className='divTag para-wrapper'>
                                 <h3 className="title-3">Customize your data model</h3>
                                 <p className='para'>
@@ -139,7 +140,7 @@ const Section6 = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="divTag w-layout-grid custom-wrapper">
+                        <div className="divTag w-layout-grid6">
                             <div id="para-wrap" className='divTag '>
                                 <h3 className="title-3">Create your own views</h3>
                                 <p className='para'>
@@ -198,7 +199,7 @@ const Section6 = () => {
                             </div>
                             <div
                                 id="ownViewsImages"
-                                className="divTag custom-visuals"
+                                className="divTag custom-visual6"
                             >
                                 <div className={`divTag custom-visual ${activeTerm2 === 'Doc types' ? 'is-active' : ''}`}>
                                     <img

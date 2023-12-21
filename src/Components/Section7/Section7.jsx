@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Section7.css";
+import "../Global.css";
 import coverImg from '../../assets/cover-file.svg';
 import eyeShape from "../../assets/eyes-shape.svg"
 import eyeWhite from "../../assets/eyes-white.svg"
@@ -45,28 +46,53 @@ const Square = () => {
 
 function Section7() {
 
-  const nodeRef= useRef(null);
+  // const nodeRef= useRef(null);
   const [backgroundColor, setBackgroundColor] = useState("#fff");
   const [hover, setHover] = useState("0");
+  const [gArrow, setGArrow] = useState(false);
+  const [gArrow2, setGArrow2] = useState(false);
+  const [bArrow, setBArrow] = useState(false);
+  const [bArrow2, setBArrow2] = useState(false);
+  const [yArrow, setYArrow] = useState(false);
+  const [yArrow2, setYArrow2] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [dragOver, setDragOver] = useState(false);
-  const [rotation,setRotation] = useState(0);
   const [currentPos,setCurrentPos] = useState({x:0 , y:0});
   const [currentPosition, setCurrentPosition] = useState({
     xRate: 0,
     yRate: 0
   });
 
-  const handleRotation=()=>{
-    const angle = Math.atan2(currentPos.y - window.innerHeight / 2, currentPos.x - window.innerWidth / 2);
-    setRotation(angle * 180 / Math.PI);
+  const handleGreenArrow =()=>{
+    setYArrow(true);
+    setBArrow(true);
+    setGArrow(true);
+    setYArrow2(false);
+    setBArrow2(false);
+    setGArrow2(false);
   }
+  const handleYellowArrow =()=>{
+    setBArrow2(true);
+    setGArrow(true);
+    setYArrow(true);
+    setYArrow2(true);
+    setBArrow(false);
+    setGArrow2(false);
+  }
+  const handleBlueArrow =()=>{
+    setYArrow2(true);
+    setGArrow2(true);
+    setBArrow(true);
+    setYArrow(false);
+    setGArrow(false);
+    setBArrow2(false);
+  }
+
   const handleMouse = (e) => {
     setCurrentPos({x:e.clientX,y:e.clientY});
   };
   const handleMouseOut =(e)=>{
     setCurrentPos({x:0,y:0});
-    setRotation(0);
   }
 
   const handleStart=(e,data)=>{
@@ -100,21 +126,21 @@ function Section7() {
     <>
       <section className="section-7">
         <div className="section-wrapper">
-          <div className="container w-container">
-            <div className="section-title is-large">
-              <h2 className="title2">And there&#x27;s even more...</h2>
-              <div className="tagline ch-30">
+          <div className="container7 w-container7">
+            <div className="section-title7 is-large">
+              <h2 className="title7">And there&#x27;s even more...</h2>
+              <div className="tagline7 ch-7">
                 Cycle is full of delightful details that will make you enjoy the
                 ride.
               </div>
             </div>
 
-            <div className="w-layout-grid-col delights-grid">
+            <div className="w-layout-grid-col delights-grid7">
               <div
                 id="w-node-a0f2f313-23c1-b194-6429-3db4bdcbbc61-0d911088"
                 className="delight cover"
               >
-                <div className="delight-content cover">
+                <div className="delight-content7 cover">
                   <h3 className="title3">Cover pictures</h3>
                   <p className="body-small">
                     Drag &amp; drop images or GIFs to create beautiful cover
@@ -124,7 +150,7 @@ function Section7() {
                 <div className="delight-wrapper cover handle">
                   <Draggable
                   draggable
-                  nodeRef={nodeRef}
+                  // nodeRef={nodeRef}
                    position={{
                     x: currentPosition.xRate,
                     y: currentPosition.yRate
@@ -237,7 +263,9 @@ function Section7() {
                 <div className="delight-wrapper theme">
                   <div
                     data-w-id="864a7fb0-c790-91e9-a26d-36ce967ce8ff"
-                    className="delight-theme-colors"
+                    className={`delight-theme-colors ${hover === "1"?"translate-colors-full":""} ${hover === "2"?"translate-colors-half":""}
+                    ${hover === "4"?"translate-colors-half-right":""}
+                    ${hover === "5"?"translate-colors-full-right":""}`}
                   >
                     <div id={"1"} className="delight-theme-color is-yellow" onMouseEnter={() => setHover("1")} onMouseLeave={removeColor}>
                       <div className="delight-theme-color-circle is-yellow" />
@@ -387,9 +415,9 @@ function Section7() {
                     className="delight-collab-wrapper green w-inline-block"
                   >
                     <div className="delight-collab-circle"></div>
-                    <div onClick={handleRotation}
-                     style={{transform:`rotate(${rotation}deg)`}}
-                      className="delight-collab-arrow green w-embed"
+                    <div onClick={handleGreenArrow}
+                   
+                      className={`delight-collab-arrow green w-embed ${gArrow === true?"green-to-yellow":""} ${gArrow2 === true?"green-to-blue":""}`}
                     >
                       <img src={greenArrow} alt="collabCircle" />
                     </div>
@@ -408,9 +436,8 @@ function Section7() {
                   >
                     <div className="delight-collab-circle"></div>
                     <div
-                    onClick={handleRotation}
-                    style={{transform:`rotate(${rotation}deg)`}}
-                      className="delight-collab-arrow yellow w-embed"
+                    onClick={handleYellowArrow}
+                      className={`delight-collab-arrow yellow w-embed ${yArrow === true?"yellow-to-green":""} ${yArrow2 === true?"yellow-to-blue":""}`}
                     >
                       <img src={yellowArrow} alt="yellowArrow" />
                     </div>
@@ -424,14 +451,13 @@ function Section7() {
                   <a
                     id="w-node-_17527b17-c5a9-e06d-d3c8-7fbf122de92c-0d911088"
                     data-w-id="17527b17-c5a9-e06d-d3c8-7fbf122de92c"
-                    href="##"
+                    href="#"
                     className="delight-collab-wrapper blue w-inline-block"
                   >
                     <div className="delight-collab-circle"></div>
                     <div
-                     onClick={handleRotation}
-                     style={{transform:`rotate(${rotation}deg)`}}
-                      className="delight-collab-arrow blue w-embed"
+                     onClick={handleBlueArrow}
+                      className={`delight-collab-arrow blue w-embed ${bArrow === true?"blue-to-green":""} ${bArrow2 === true?"blue-to-yellow":""}`}
                     >
                       <img src={blueArrow} alt="blueArrow" />
                     </div>
@@ -450,21 +476,7 @@ function Section7() {
                     clicking on their avatars
                   </p>
                 </div>
-                {/* <div className="code w-embed">
-                  <style>
-                    {`
-            .delight-collab-circle {
-              background-color: currentcolor;
-            }
-
-            .delight-collab-wrapper {
-              border-color: currentcolor;
-            }
-          `}
-                  </style>
-                </div> */}
               </div>
-
               <div
                 id="w-node-_85c302fc-bdd2-cec5-afe4-c478b8ebc00f-0d911088"
                 className="delight incognito"

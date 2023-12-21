@@ -1,5 +1,6 @@
 import React ,{useState} from "react";
 import "./Section9.css";
+import "../Global.css";
 import circleLine from "../../assets/cube-line.svg";
 import cubeLine from "../../assets/circle-line.svg";
 
@@ -12,13 +13,13 @@ export default function Hero() {
 
   return (
     <section className="section-9">
-      <div className="containers container1">
+      <div className="container9">
         <div className="footer-wrapperr">
           <div className="w-layout-gridss">
             <div className="section-title1">
               <h2 className="heading1">Try Cycle today</h2>
               <div className="block">
-                <div className="buttons">
+                <div className="block-buttons">
                   <a href="/" className="button" id="btn1">
                     Start free trial
                   </a>

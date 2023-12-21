@@ -1,12 +1,11 @@
 import React from "react";
+import "../Global.css";
 import "./Section4.css"
 import img1 from "../../assets/context-img.jpg";
 import img2a from "../../assets/delight-before-main.jpg";
 import img2b from "../../assets/delight-after.svg";
 import img3 from "../../assets/prd-content.jpg";
 import img4 from "../../assets/prd-custom.png";
-
-
 
 const Section4 = () => {
   return (
@@ -20,7 +19,7 @@ const Section4 = () => {
           className="content-main"
         >
           <h2 className="main-head">Write and organize your PRDs</h2>
-          <p>
+          <p className="main-para">
             All of your customer context, all in your PRDs. No split screen, no
             tool switching; it's all here.
           </p>
@@ -34,8 +33,8 @@ const Section4 = () => {
             <div
               className="template-content"
             >
-              <h3>Customer context</h3>
-              <p>
+              <h3 className="temp1-head">Customer context</h3>
+              <p className="temp1-para">
                 Open a product initiative and use the insights panel on the
                 right to empathize
               </p>
@@ -56,7 +55,7 @@ const Section4 = () => {
             <div
               className="template-content"
             >
-              <h3>Delightful writing experience</h3>
+              <h3 className="temp2-head">Delightful writing experience</h3>
               <p>
                 Enjoy writing product specs with Cycle's full-fledged real-time
                 editor, built for speed and delight.
@@ -64,7 +63,6 @@ const Section4 = () => {
             </div>
             <div
               className="template-image temp-img2"
-              style={{backgroundColor:"#fefaed"}}
             >
               <img
                 src={img2a}
@@ -84,7 +82,7 @@ const Section4 = () => {
             <div
               className="template-content"
             >
-              <h3>Content templates</h3>
+              <h3 className="temp3-head">Content templates</h3>
               <p>
                 Content templates help you pre-fill PRDs with the structure and
                 formatting you want.
@@ -92,7 +90,6 @@ const Section4 = () => {
             </div>
             <div
               className="template-image temp-img2"
-              style={{backgroundColor:"#fefaed"}}
             >
               <img
                 src={img3}
@@ -107,7 +104,7 @@ const Section4 = () => {
             <div
               className="template-content"
             >
-              <h3>Custom properties</h3>
+              <h3 className="temp4-head">Custom properties</h3>
               <p>
                 Add custom properties to your product initiatives. Use them to
                 organize your roadmap.

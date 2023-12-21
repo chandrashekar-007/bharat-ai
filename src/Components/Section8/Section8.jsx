@@ -1,4 +1,5 @@
 import "./Section8.css";
+import "../Global.css";
 import a1 from "../../assets/a1.png";
 import a2 from "../../assets/a2.png";
 import a3 from "../../assets/a3.png";
@@ -18,14 +19,14 @@ function App() {
   return (
     <>
     <section className="section-8">
-      <div className="container">
+      <div className="container8">
         <div className="section-title title">
-          <h2>You’re in great company</h2>
-          <div className="tagline">
+          <h2 className="title8">You’re in great company</h2>
+          <div className="tagline8">
             500+ product-led organizations get stuff done with Cycle
           </div>
         </div>
-        <div className="w-layout-grids quotes-grid">
+        <div className=" quotes-grid8">
           <div
             id="w-node-_89e0b93b-43d6-93a0-1e7d-e83d4d6176d3-0d911088"
             className="quote-card"

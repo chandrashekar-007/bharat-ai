@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./Section5.css";
+import "../Global.css";
 import imgPlay from "../../assets/icon-close-the-loop-play.svg";
 import imgPause from "../../assets/icon-close-the-loop-pause.svg";
 import imgNotif from "../../assets/icon-notif.svg";
@@ -19,22 +20,22 @@ function Section5() {
 
   return (
     <>
-      <section className="section is-close">
-        <div className="section-wrapper is-close">
-          <div className="container w-container">
-            <div className="section-title is-large">
+      <section className="section-5">
+        <div className="section-wrapper5 is-close">
+          <div className="container-5">
+            <div className="section-title5 is-large">
               <h2 className="title-main">
                 Close the loop with customers at each release
               </h2>
-              <div className="tagline ch-30">
+              <div className="tagline5 ch-3">
                 Just shipped a cool feature? Use Cycle to get back to folks who
                 requested it.
               </div>
             </div>
           </div>
-            <div className="w-layout-grid close-grid">
-              <div className="close-video-wrapper">
-                <div className="close-video-button w-inline-block" onClick={()=>toggleVideo(    setIsPlaying(!isPlaying))}>
+            <div className="w-layout-grid5 close-grid5">
+              <div className="close-video-wrapper5">
+                <div className="close-video-button w-inline-block5" onClick={()=>toggleVideo(    setIsPlaying(!isPlaying))}>
                   <div className={`close-video-button-icons`}>
                     <img
                       src={` ${isPlaying ? imgPlay:imgPause}`}
@@ -62,7 +63,7 @@ function Section5() {
                     alt=""
                     className="feature-icon"
                   />
-                  <h3 className="title3">Personalized notifications</h3>
+                  <h3 className="feature-icon-title">Personalized notifications</h3>
                   <p className="paratext">
                     Get notified in Slack or via email when there's an update on
                     an initiative you showed interest in.
@@ -75,7 +76,7 @@ function Section5() {
                     alt=""
                     className="feature-icon"
                   />
-                  <h3 className="title3">Close the loop</h3>
+                  <h3 className="feature-icon-title">Close the loop</h3>
                   <p className="paratext">
                     Communicate with customers in the right source and with the
                     right message when you ship something they asked.
@@ -88,7 +89,7 @@ function Section5() {
                     alt=""
                     className="feature-icon"
                   />
-                  <h3 className="title3">Recruit people for user research</h3>
+                  <h3 className="feature-icon-title">Recruit people for user research</h3>
                   <p className="paratext">
                     Reach out to the right folks when you start thinking about a
                     new feature - if they gave you feedback about it, they're

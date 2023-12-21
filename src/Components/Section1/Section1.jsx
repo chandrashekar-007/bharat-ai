@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState}   from "react";
-import "./style1.css";
+import "./Section1.css";
+import "../Global.css";
 import { TbStack3 } from "react-icons/tb";
 import  {Link}   from "react-router-dom";
 import gsap from 'gsap';
@@ -43,23 +44,56 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const Section1 = () => {
   const [scroll, setScroll] = useState(false);
+  const [small, setSmall] = useState(false);
+  const [scrollDown, setScrollDown] = useState(false);
   const [settle, setSettle] = useState(false);
-  const listenToScroll = ()=>{
-    let heightToHidden = 450;
-    let heightToHidden2 = 1200;
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    // console.log(winScroll);
-    winScroll > heightToHidden && winScroll < heightToHidden2 ? setScroll(true) : setScroll(false)
-    winScroll > heightToHidden2 ? setSettle(true) : setSettle(false)
-  }
+  const [value, setValue] = useState(0);
+  const [isExpanding, setIsExpanding] = useState(false);
+  const [isExpandingLast, setIsExpandingLast] = useState(false);
   
-
   useEffect(() => {
+  const listenToScroll = ()=>{
+    const heightToHidden = 550;
+    const heightToHidden1 = 680;
+    const heightToHidden2 = 1100;
+    const heightToHidden3 = 1360;
+    const heightToHidden4 = 1350;
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const pos = window.pageYOffset;
+    setValue(pos);
+    // console.log(pos);
+
+    winScroll > heightToHidden1 && winScroll < heightToHidden2 ? setScroll(false) : setScroll(false);
+
+    winScroll <  heightToHidden2 ? setSmall(true) : setSmall(false);
+
+    pos > heightToHidden && pos < heightToHidden4 ? setScrollDown(true) : setScrollDown(false);
+
+    pos > heightToHidden2 && pos < heightToHidden4  ? setIsExpanding(true) : setIsExpanding(false);
+
+    winScroll > heightToHidden3 ? setIsExpandingLast(true) : setIsExpandingLast(false);
+
+    winScroll > heightToHidden4 ? setSettle(true) : setSettle(false);
+  }
+
     window.addEventListener("scroll",listenToScroll);  
     return () => {
       window.removeEventListener("scroll",listenToScroll);
     }
   }, [])
+  const style1={
+    transform:`translateY(-${1300-value}px)`,
+    transition:'transform 2s linear'
+  }
+  const style2={
+    height:'5rem',
+    width:`${(value/10)-100}rem`,
+    transition:'all 3s linear'
+  }
+  const style3={
+    transform:'translate(0%,0%) rotate(0deg)',
+    transition:'all 0.5s linear',
+  }
 
   const elem1 = useRef(null);
   const elem2 = useRef(null);
@@ -105,79 +139,85 @@ export const Section1 = () => {
 
 
     gsap.to(el1,{
-      x: '0%',
-      y: '-1970%',
+        y:'-1300%',
+        x:'0%',
       duration: 500,
       ease: "ease-in",
       scrollTrigger: {
         trigger: el5,
         delay:0.5,
-        start: "top 20% +=2",
+        start: "top 20% +=3",
         scrub: true,
+        
         // markers: true,
         
       }
   })
-    gsap.to(el3,{
-      x: '0%',
-      y: '-1980%',
+  gsap.to(el3,{
+      y:'-1400%',
+      x:'0%',
       duration: 500,
       ease: "ease-in",
       scrollTrigger: {
         trigger: el5,
         delay:0.5,
-        start: "top 20% +=2",
+        start: "top 20% +=1",
         scrub: true,
+        
         // markers: true,
         
       }
   })
     gsap.to(el5,{
-      x: '0%',
-      y: '-1990%',
+        y:'-1450%',
+        x:'0%',
       duration: 500,
       ease: "ease-in",
       scrollTrigger: {
         trigger: el5,
-        start: "top 70%",
+        start: "top 40%",
         scrub: true,
+        
         // markers: true,        
       }
   })
-    gsap.to(el2,{
-      x: '0%',
-      y: '-1990%',
+  gsap.to(el2,{
+      x:'0%',
+      y:'-1300%',
       duration: 500,
       ease: "ease-in",
       scrollTrigger: {
         trigger: el6,
-        start: "top 20%",
+        start: "top 20% +=3",
         scrub: true,
+        
         // markers: true,
       }
   })
-    gsap.to(el4,{
-      x: '0%',
-      y: '-1990%',
+  gsap.to(el4,{
+      x:'0%',
+      y:'-1400%',
       duration: 500,
       ease: "ease-in",
       scrollTrigger: {
         trigger: el6,
-        start: "top 20%",
+        start: "top 20% +=1",
         scrub: true,
+        
         // markers: true,
 
       }
   })
     gsap.to(el6,{
-      x: '0%',
-      y: '-1990%',
+        x:'0%',
+        y:'-1450%',
       duration: 500,
       ease: "ease-in",
       scrollTrigger: {
         trigger: el6,
-        start: "top 65%",
+        start: "top 40%",
         scrub: true,
+        
         // markers: true,
         
       }
@@ -192,29 +232,29 @@ export const Section1 = () => {
         data-w-id="8feff86c-b318-d1af-6266-96dad34cab76"
         className="head"
       >
-        <div className="hero-gradient"></div>
-        <div className="w-layout-blockcontainer container is-head w-container">
-          <Link to="/"  className="widget-banner w-inline-block">
+        <div className="hero-gradient1"></div>
+        <div className="w-layout-blockcontainer container1 is-head w-container1">
+          <Link to="/"  className="widget-banner1 w-inline-block1">
             <div className="widget-emoji"><TbStack3/></div>
             <div>We're live on Product Hunt!</div>
             <div className="widget-link">
               <div>Learn more</div>
               <div className="button-arrow-wrapper is-right">
                 <div className="button-arrow is-small w-embed">
-                 <img src={btnArrow} alt="btn-arrow" />
+                 <img src={btnArrow} alt="btn-arrow" className="banner-arrow" />
                 </div>
               </div>
             </div>
           </Link>
-          <div className="head-title">
-            <h1 className="headline">
+          <div className="head-title1">
+            <h1 className="headline1">
               Your product feedback,
               <span className="color-txt-blue">
                 <br />
                 all in one place
               </span>
             </h1>
-            <div className="tagline ch-40">
+            <div className="tagline1 ch-40">
               Cycle is the most delightful way to capture feedback, extract
               insights, create roadmaps, and communicate your releases.
             </div>
@@ -280,8 +320,8 @@ export const Section1 = () => {
             >
         
               <div className={`head-ui-wrapper is-sticky ${settle === true ? "flex": ""}`} >
-                <div className={`ui-row-wrapper is-1 ${scroll === true ? "scroll-1":settle === true ? "settle-1":""}`} ref={elem1}>
-                  <div className={`ui-row is-1 ${settle === true ? "size": ""}`}>
+                <div className={`ui-row-wrapper is-1 ${scroll === true ? "scroll-1":settle === true ? "settle-1":""} ${small? "invisible":"visible"}`} ref={elem1} style={scrollDown?style1:null} >
+                  <div className={`ui-row is-1 ${settle === true ? "size": ""} `} style={isExpanding?style2:null}>
                     <div className={`ui-wrapper is-final ${settle === true ? "show": "hide"}`}>
                       <div className="ui-horizontal">
                         <div className={`ui-image-wrapper is-transparent ${settle === true ? "visible": ""}`}>
@@ -341,8 +381,8 @@ export const Section1 = () => {
                     </div>
                   </div>
                 </div>
-                <div className={`ui-row-wrapper is-2 ${scroll === true ? "scroll-2":"scroll-back"} ${settle === true ? "settle-2":""}`} ref={elem2}>
-                  <div className={`ui-row is-2 ${settle === true ? "size": ""}`}>
+                <div className={`ui-row-wrapper is-2 ${scroll === true ? "scroll-2":"scroll-back"} ${settle === true ? "settle-2":""} ${small? "invisible":"visible"}`} ref={elem2} style={scrollDown?style1:null}>
+                  <div className={`ui-row is-2 ${settle === true ? "size": ""}`} style={isExpanding?style2:null}>
                     <div className={`ui-wrapper is-final ${settle === true ? "show": "hide"}`}>
                       <div className="ui-horizontal">
                         <div className={`ui-image-wrapper is-transparent ${settle === true ? "visible": ""}`}>
@@ -394,8 +434,8 @@ export const Section1 = () => {
                     </div>
                   </div>
                 </div>
-                <div className={`ui-row-wrapper is-3 ${scroll === true ? "scroll-3":"scroll-back"} ${settle === true ? "settle-3":""}`} ref={elem3}>
-                  <div className={`ui-row is-3 ${settle === true ? "size": ""}`}>
+                <div className={`ui-row-wrapper is-3 ${scroll === true ? "scroll-3":"scroll-back"} ${settle === true ? "settle-3":""} ${small? "invisible":"visible"}`} ref={elem3} style={scrollDown?style1:null}>
+                  <div className={`ui-row is-3 ${settle === true ? "size": ""}`} style={isExpanding?style2:null}>
                     <div className={`ui-wrapper is-final ${settle === true ? "show": "hide"}`}>
                       <div className="ui-horizontal">
                         <div className={`ui-image-wrapper is-transparent ${settle === true ? "visible": ""}`}>
@@ -425,7 +465,7 @@ export const Section1 = () => {
                       </div>
                     </div>
                     <div className={`ui-wrapper is-image ${settle === true ? "hide": "show"}`}>
-                      <div className="ui-cover is-large">
+                      <div className="ui-cover is-large circle ">
                         <img
                           src={memoji1}
                           loading="lazy"
@@ -433,15 +473,11 @@ export const Section1 = () => {
                           className="ui-memoji"
                         />
                       </div>
-                      <div className="ui-lines">
-                        <div className="ui-line"></div>
-                        <div className="ui-line is-small"></div>
-                      </div>
                     </div>
                   </div>
                 </div>
-                <div className={`ui-row-wrapper is-4 ${scroll === true ? "scroll-4":"scroll-back"} ${settle === true ? "settle-4":""}`} ref={elem4}>
-                  <div className={`ui-row is-4 ${settle === true ? "size": ""}`}>
+                <div className={`ui-row-wrapper is-4 ${scroll === true ? "scroll-4":"scroll-back"} ${settle === true ? "settle-4":""} ${small? "invisible":"visible"}`} ref={elem4} style={scrollDown?style1:null}>
+                  <div className={`ui-row is-4 ${settle === true ? "size": ""}`} style={isExpanding?style2:null}>
                     <div className={`ui-wrapper is-final ${settle === true ? "show": "hide"}`}>
                       <div className="ui-horizontal">
                         <div className={`ui-image-wrapper is-transparent ${settle === true ? "visible": ""}`}>
@@ -486,26 +522,15 @@ export const Section1 = () => {
                         />
                       </div>
                       <div
-                        id="w-node-_8feff86c-b318-d1af-6266-96dad34cabd0-0d911088"
-                        className="ui-cta"
-                      >
-                        <img
-                          src={youtube}
-                          loading="lazy"
-                          alt="Logo of YouTube"
-                          className="ui-memoji"
-                        />
-                      </div>
-                      <div
                         id="w-node-_8feff86c-b318-d1af-6266-96dad34cabd2-0d911088"
-                        className="ui-lines"
+                        className="ui-lines four"
                       >
                         <div className="ui-line"></div>
                         <div className="ui-line is-small"></div>
                       </div>
                       <div
                         id="w-node-_8feff86c-b318-d1af-6266-96dad34cabd5-0d911088"
-                        className="w-layout-grid ui-grid"
+                        className="w-layout-grid ui-grid four"
                       >
                         <div
                           id="w-node-_8feff86c-b318-d1af-6266-96dad34cabd6-0d911088"
@@ -527,8 +552,8 @@ export const Section1 = () => {
                     </div>
                   </div>
                 </div>
-                <div className={`ui-row-wrapper is-5 ${scroll === true ? "scroll-5":"scroll-back"} ${settle === true ? "settle-5":""}`} ref={elem5}>
-                  <div className={`ui-row is-5 ${settle === true ? "size": ""}`}>
+                <div className={`ui-row-wrapper is-5 ${scroll === true ? "scroll-5":"scroll-back"} ${settle === true ? "settle-5":""} ${small? "invisible":"visible"}`} ref={elem5} style={scrollDown?style1:null}>
+                  <div className={`ui-row is-5 ${settle === true ? "size": ""}`} style={isExpanding?style2:null}>
                     <div className={`ui-wrapper is-final ${settle === true ? "show": "hide"}`}>
                       <div className="ui-horizontal">
                         <div className={`ui-image-wrapper is-transparent ${settle === true ? "visible": ""}`}>
@@ -600,8 +625,8 @@ export const Section1 = () => {
                     </div>
                   </div>
                 </div>
-                <div className={`ui-row-wrapper is-6 ${scroll === true ? "scroll-6":"scroll-back"} ${settle === true ? "settle-6":""}`} ref={elem6}>
-                  <div className={`ui-row is-6 ${settle === true ? "size": ""}`}>
+                <div className={`ui-row-wrapper is-6 ${scroll === true ? "scroll-6":"scroll-back"} ${settle === true ? "settle-6":""} ${small? "invisible":"visible"}`} ref={elem6} style={scrollDown?style1:isExpandingLast?style3:null}>
+                  <div className={`ui-row is-6 ${settle === true ? "size": ""}`} style={isExpanding?style2:null}>
                     <div className={`ui-wrapper is-final ${settle === true ? "show": "hide"}`}>
                       <div className="ui-horizontal">
                         <div className={`ui-image-wrapper is-transparent ${settle === true ? "visible": ""}`}>
@@ -686,10 +711,10 @@ export const Section1 = () => {
           ></div>
         </div>
       </section>
-      <section className="section">
+      <section className="company-section">
         <div className="container w-container">
-          <div className="section-title">
-            <div className="tagline">Loved by product folks at</div>
+          <div className="section-title1">
+            <div className="tagline2">Loved by product folks at</div>
           </div>
           <figure className="clients-bar">
             <img

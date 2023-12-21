@@ -1,31 +1,11 @@
-html {
-    font-family: sans-serif;
-}
 
-body {
-    margin: 0;
-}
 
-:root {
-    --white: white;
-    --black: #171618;
-    --grey: #5b5a59;
-    --blue: #2b44e7;
-    --borders: rgba(56, 56, 138, 0.12);
-    --blue--hover: #6e81ff;
-    --yellow: #ffd231;
-    --orange: #ff9000;
-    --pink: #fbb8fd;
-    --green: #2bca76;
-    --light: #f5f3f4;
-    --teal: #23c1f2;
-}
 
 .section-8{
     padding : 3rem 0 3rem;
 }
 
-.section-8>.container {
+.section-8>.container8 {
     width: 100%;
     max-width: 85rem;
     margin-left: auto;
@@ -34,7 +14,7 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap:3rem;
+    gap:1rem;
 }
 
 .section-title {
@@ -51,35 +31,34 @@ body {
 }
 
 .title {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     color: #171618;
-    text-align: center;
     font-family: Inter;
     font-style: normal;
 }
 
-.title h2 {
+ h2.title8 {
     font-size: 2.6rem;
     font-style: normal;
     font-weight: 900;
-    /* line-height: 57.2px; */
+    margin-top: 3rem;
+    line-height: 2rem;
     letter-spacing: -1.43px;
     font-family: ABC Marfa, sans-serif;
 }
 
-.title .tagline {
+.title .tagline8 {
     font-size: 1.2rem;
     font-style: normal;
     font-weight: 100;
     font-family: sans-serif;
     max-width: 30ch;
+    margin-top: 1rem;
     letter-spacing: 0.02rem;
     opacity: .9;
 }
 
-.w-layout-grids {
+.w-layout-grids8 {
     grid-row-gap: 16px;
     grid-column-gap: 16px;
     grid-template-rows: auto auto;
@@ -89,17 +68,19 @@ body {
 
 }
 
-.quotes-grid {
+.quotes-grid8 {
     margin-bottom: 2rem;
     grid-column-gap: 0.8rem;
     grid-row-gap: 0.8rem;
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr 1fr;
     display: grid;
+    max-width: 50rem;
+    align-self: center;
 
 }
 
-.quotes-grid.is-small {
+.quotes-grid8.is-small {
     grid-template-columns: 1fr 1fr;
 }
 
@@ -147,8 +128,6 @@ body {
     z-index: 9;
     grid-column-gap: 8px;
     grid-row-gap: 8px;
-    background-color: var(--green);
-    color: var(--green);
     letter-spacing: -0.025em;
     border-radius: 48px;
     flex-flow: row;
@@ -229,22 +208,22 @@ body {
     clear: both;
 }
 
-.body-small {
+/* .body-small {
     font-size: 0.9em;
-}
+} */
 
 .color-txt-white {
     color: var(--white);
 }
 
 @media screen and (max-width: 991px) {
-    .container {
+    .container8 {
         max-width: 728px;
         padding:0;
         margin: 0 2rem;
     }
 
-    .quotes-grid{
+    .quotes-grid8{
         grid-template-columns: 1fr 1fr;
     }
     .quote-card {
@@ -254,39 +233,39 @@ body {
 
 @media screen and (max-width: 768px) {
     
-    .section-8>.container{
+    .section-8>.container8{
         max-width: 700px;
         padding:0 1rem;
         margin: 0 1rem;
     }
-    h2 {
-        font-size: 12px;
+    h2.title8 {
+        font-size: 2.5rem;
     }
-    .quotes-grid >.quote-card {
+    .quotes-grid8 >.quote-card {
         padding: 1.9rem;
     }
 
-    .quotes-grid,
-    .quotes-grid.is-small {
+    .quotes-grid8,
+    .quotes-grid8.is-small {
         grid-template-columns: 2fr;
     }
 
 }
 
 @media screen and (max-width: 430px) {
-    .section-8>.container {
+    .section-8>.container8 {
         max-width: none;
         margin:0;
         padding: 0 1.1rem;
     }
-    h2 {
-        font-size: 6px;
+    h2.title8 {
+        font-size: 2.3rem;
     }
     .quote-card {
         padding: 2rem;
     }
-    .container>.quotes-grid,
-    .quotes-grid.is-small {
+    .container8>.quotes-grid8,
+    .quotes-grid8.is-small {
         grid-template-columns: 1fr;
     }
     .callout-fun.is-circle {

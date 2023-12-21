@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./style.css";
+import "./Nav.css";
+import "../Global.css";
 import { ImCross } from "react-icons/im";
 import { IoMenu  } from "react-icons/io5";
 import dropIcon from "../../assets/dropdown-icon.svg"
-import navLogo from "../../assets/nav-logo.svg"
+import navLogo from "../../assets/BharatAi.svg"
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
@@ -36,7 +37,7 @@ export const Navbar = () => {
       data-duration="400"
       data-doc-height="1"
     >
-      <div className="container nav-container">
+      <div className="contain nav-container">
         <div className={`nav-background ${scroll === true ? "is-visible":""}`}></div>
         <Link
           to="/"
@@ -165,7 +166,7 @@ export const Navbar = () => {
             data-property-page="header"
             data-analytics="Get started"
             to="/Coming"
-            className="button nav-button w-inline-block"
+            className="button blue nav-button w-inline-block"
           >
             <div>Start free trial</div>
             <div className="tooltip-wrapper is-nav">

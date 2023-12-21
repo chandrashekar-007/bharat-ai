@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useRef} from "react";
 import './Section2.css'
+import "../Global.css";
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/all';
 import image1 from "../../assets/main-pic.jpg";

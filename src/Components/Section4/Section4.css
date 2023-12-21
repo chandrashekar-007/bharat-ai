@@ -1,17 +1,6 @@
-* {
-    font-family: 'Arial', 'sans-serif';
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
-body {
-    margin: 0;
-    padding: 0;
-}
-
-section {
-    padding: 3rem 0;
+.section-4 {
+    padding: 2rem 0;
     overflow: hidden;
 }
 
@@ -40,26 +29,24 @@ section {
     line-height: 1.1;
 }
 
-h2{
+h2.main-head{
     font-size: 2.5rem;
     font-weight: 900;
     line-height: 1.1;
     letter-spacing: -0.1rem;
+    margin-bottom: 1.2rem;
+    font-family: ABC Marfa, sans-serif;
 }
 
-h3 {
+h3.temp1-head,
+h3.temp2-head,
+h3.temp3-head,
+h3.temp4-head {
     font-size: 1.3rem;
     font-weight: 700;
+    margin-bottom: 0.7rem;
     line-height: 1.3;
 }
-
-p {
-    font-size: 1.2rem;
-    font-weight: 400;
-    line-height: 1.4;
-    opacity: .9;
-}
-
 
 
 .template1:hover,
@@ -165,8 +152,14 @@ p {
     grid-area: 2/3/2/4;
 }
 
+.template2>.template-content{
+    min-height:8.6rem;
+}
+.template3>.template-content{
+    min-height:9.9rem;
+}
 .template-content {
-    min-height:8.5rem;
+    min-height:8rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -180,6 +173,7 @@ p {
 .template-content>p {
     font-size: 1rem;
     opacity: .7;
+    color: var(--grey);
 }
 
 .template-image {
@@ -191,6 +185,12 @@ p {
     margin: 1rem auto 1rem;
     height: 300px;
     padding: 1.5rem 2.4rem;
+}
+
+.template2>.template-image,
+.template3>.template-image
+{
+ background-color:#fefaed;
 }
 
 .temp-img1{
@@ -213,10 +213,10 @@ p {
     .container-4 .content-main{
         padding: 0;
     }
-    .content-main> h2{
+    .content-main> h2.main-head{
         font-size: 2.2rem;
     }
-    .content-main >p{
+    .content-main >p.main-para{
         font-size: 1.2rem;
     }
     .container-4 .templates{
@@ -245,10 +245,10 @@ p {
     .section-4 .container-4 .templates{
         grid-template-columns: 1fr;
     }
-    h2 .main-head{
+    h2.main-head{
         font-size: 2.3rem !important;
     }
-    .content-main >p{
+    .content-main >p.main-para{
         text-align: center;
         padding: 0 0.5rem;
     }

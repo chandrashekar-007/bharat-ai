@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./Section3.css";
+import "../Global.css";
 import topImage1 from "../../assets/character-cap.png";
 import topImage2 from "../../assets/character-glasses.png";
-import mainImg1 from "../../assets/container-img.png";
-import img from "../../assets/btn-pic.svg";
+// import mainImg1 from "../../assets/container-img.png";
+// import img from "../../assets/btn-pic.svg";
 import arrowr from "../../assets/right-arrow.svg";
 import arrowl from "../../assets/left-arrow.svg";
 
@@ -20,8 +21,7 @@ const Section3 = () => {
 
   return (
     <section className="section-3">
-      {/* <img src={img} alt="hello" /> */}
-      <div className="container">
+      <div className="container3">
         <div className="wrapper-1">
           <div className="content-1">
             <h2>Capture feedback from many sources</h2>

@@ -1,17 +1,4 @@
-:root {
-    --white: white;
-    --black: #171618;
-    --grey: #5b5a59;
-    --blue: #2b44e7;
-    --borders: rgba(56, 56, 138, 0.12);
-    --blue--hover: #6e81ff;
-    --yellow: #ffd231;
-    --orange: #ff9000;
-    --pink: #fbb8fd;
-    --green: #2bca76;
-    --light: #f5f3f4;
-    --teal: #23c1f2;
-}
+
 section.section-9{
     overflow: inherit;
 
@@ -38,28 +25,17 @@ section.section-9{
     grid-auto-columns: 1fr;
     display: grid;
 }
-.containers {
-    width: 100%;
-    margin: 0 auto;
-    max-width: 70rem;
+
+.container9 {
+    margin: 2rem auto 0;
     padding: 0 3.2rem;
-    position: relative;
-    flex-flow: row;
-}
-div.container1{
     overflow: unset;
-}
-.container1 {
     width: 90%;
     height: 573.08px;
     max-width: 85rem;
-    margin-left: auto;
-    margin-right: auto;
     position: relative;
-    /* overflow: hidden; */
     background: #2b44e7;
     border-radius: 32px;
-    margin-top: 20px;
 }
 
 .section-title1 {
@@ -68,11 +44,9 @@ div.container1{
     text-align: center;
     flex-direction: column;
     align-items: center;
-    /* margin-top: 3.2rem; */
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    /* gap:3rem; */
     position: relative;
 }
 
@@ -93,13 +67,14 @@ div.container1{
     line-height: 1;
 }
 
-.block>.buttons {
+.block>.block-buttons {
     grid-column-gap: 12px;
     grid-row-gap: 12px;
     justify-content: center;
     align-items: stretch;
     margin-top: 1rem;
     display: flex;
+    flex-wrap: wrap;
 
 }
 
@@ -160,14 +135,21 @@ div.container1{
     line-height: 26px;
 }
 
-.callout-fun {
-    z-index: 999;
+
+.fun-circle-anchor {
+    height: 100%;
+    flex-flow: column;
+    flex: none;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
     position: absolute;
     top: 0%;
-    bottom: auto;
+    bottom: 0%;
     left: auto;
     right: 0%;
-}
+  }
+  
 
 .fun-cube-wrapper {
     margin-right: 2px;
@@ -205,6 +187,7 @@ div.container1{
     margin-right: 2.4rem;
     top: auto;
     bottom: 0%;
+    position:absolute;
     left: auto;
     right: 0%;
     transform: translateY(50%);
@@ -276,14 +259,14 @@ div.container1{
 
 
 @media screen and (max-width: 991px) {
-    .container {
+    .container9 {
         max-width: 728px;
     }
 }
 
 @media screen and (max-width: 769px) {
-    .container {
-        margin-left: 0;
+    .container9 {
+        margin-left: 2rem;
         margin-right: 0;
     }
     
@@ -295,24 +278,22 @@ div.container1{
         position: absolute;
         width: inherit;
     }
-    .container {
+ 
+    .container9{
         max-width: none;
-    }
-    .container1{
+        margin-left: 1rem;
         height: 28rem;
-    }
-    .containers{
         padding:0 2.2rem;
     }
-    .section-title1{
-        gap:2rem;
-    }
+   
     .section-title1 >.heading1 {
+        margin:6rem auto 0.5rem;
         font-size:2.3rem;
     }
     #btn1,
     #btn2{
         font-size: 0.9rem;
+        margin-top: 0.4rem;
         font-weight: 900;
     }
     .text-block{
@@ -321,13 +302,13 @@ div.container1{
 }
 
 @media screen and (max-width: 380px) {
-    .block>.buttons{
+    .block>.block-buttons{
         flex-direction: column;
         padding:0 3rem;
     }
    
-    .section-9>.container1{
-        height: 35rem;
+    .section-9>.container9{
+        height: 30rem;
     }
     .text-block{
         line-height: 1rem;
@@ -340,7 +321,7 @@ div.container1{
 }
 
 @media screen and (max-width: 325px) {
-    .block>.buttons{
+    .block>.block-buttons{
         flex-direction: column;
         padding:0 2rem;
     }
